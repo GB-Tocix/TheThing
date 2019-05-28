@@ -34,9 +34,9 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a type="Datetime">{{ moment(current_time).format('LLLL') }}</a></li>
                     {% if current_user.is_authenticated %}
-                    <li><a href="{{ url_for('logout') }}">Sign Out</a></li>
+                    <li><a href="{{ url_for('logout') }}">退出</a></li>
                     {% else %}
-                    <li><a href="{{ url_for('login') }}">Sign In</a></li>
+                    <li><a href="{{ url_for('login') }}">登录</a></li>
                     {% endif %}
                 </ul>
             </div>

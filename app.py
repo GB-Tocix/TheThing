@@ -1,7 +1,7 @@
 #!usr/bin/python
 
 import os
-from flask import Flask, render_template, redirect, session, url_for, flash, request
+from flask import Flask, render_template, redirect, session, url_for, flash, request, current_app
 from flask_bootstrap import Bootstrap
 from flask_login import UserMixin, LoginManager, login_required, login_user, logout_user
 from flask_moment import Moment
@@ -9,8 +9,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm, Form
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
-from wtforms import StringField, SubmitField, BooleanField, PasswordField
-from wtforms.validators import DataRequired, Length, Email
+from wtforms import StringField, SubmitField, BooleanField, PasswordField, ValidationError
+from wtforms.validators import DataRequired, Length, Email, Regexp, EqualTo
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -54,6 +54,9 @@ class User(UserMixin, db.Model):
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
     password_hash = db.Column(db.String(128))
 
+    def __init__(self, **kwargs):
+        super(User, self).__init__(**kwargs)
+
     @property
     def password(self):
         raise AttributeError('password is not a readable attribute')
@@ -70,10 +73,32 @@ class User(UserMixin, db.Model):
 
 
 class LoginForm(Form):
-    email = StringField('Email', validators=[DataRequired(), Length(1, 64), Email()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    remember_me = BooleanField('Keep me logged in')
-    submit = SubmitField('Log In')
+    email = StringField('邮箱', validators=[DataRequired(), Length(1, 64), Email()])
+    password = PasswordField('密码', validators=[DataRequired()])
+    remember_me = BooleanField('记住我的登陆状态')
+    submit = SubmitField('登陆')
+
+
+class RegistrationForm(FlaskForm):
+    email = StringField('邮箱', validators=[DataRequired(), Length(1, 64),
+                                             Email()])
+    username = StringField('用户名', validators=[
+        DataRequired(), Length(1, 64),
+        Regexp('^[A-Za-z][A-Za-z0-9_.]*$', 0,
+               'Usernames must have only letters, numbers, dots or '
+               'underscores')])
+    password = PasswordField('密码', validators=[
+        DataRequired(), EqualTo('password2', message='两次密码必须一致')])
+    password2 = PasswordField('请确认密码', validators=[DataRequired()])
+    submit = SubmitField('注册')
+
+    def validate_email(self, field):
+        if User.query.filter_by(email=field.data).first():
+            raise ValidationError('该邮箱已经被注册过了')
+
+    def validate_username(self, field):
+        if User.query.filter_by(username=field.data).first():
+            raise ValidationError('这个用户名已经被使用了')
 
 
 def db_init():
@@ -138,3 +163,17 @@ def logout():
     logout_user()
     flash('You have been logged out.')
     return redirect(url_for('index'))
+
+
+@app.route('/auth/register', methods=['GET', 'POST'])
+def register():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User(email=form.email.data,
+                    username=form.username.data,
+                    password=form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('You can now login.')
+        return redirect(url_for('login'))
+    return render_template('auth/register.html', form=form, current_time=datetime.utcnow())

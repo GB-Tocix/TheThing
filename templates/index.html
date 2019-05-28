@@ -4,15 +4,14 @@
 {% block title %}从业刷 - 首页{% endblock %}
 
 {% block page_content %}
-<div class = "page-header">
-    <h1>Hello,{% if name %}{{ name }}{% else %}Stranger{% endif %}!</h1>
-    {% if not known %}
-    <p>Pleased to meet you!</p>
-    {% else %}
-    <p>Happy to see you again</p>
-    {% endif %}
+<div class="page-header">
+    <h1>你好,
+        {% if current_user.is_authenticated %}
+            {{ current_user.username }}
+        {% else %}
+            游客
+        {% endif %}
+        ！欢迎来到从业刷 (ฅ>ω<*ฅ)
+    </h1>
 </div>
-    <form method="POST">
-        {{ wtf.quick_form(form) }}
-    </form>
 {% endblock %}
