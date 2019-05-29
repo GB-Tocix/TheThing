@@ -1,15 +1,15 @@
 #!usr/bin/python
 
 import os
-from flask import Flask, render_template, redirect, session, url_for, flash, request, current_app
+from flask import Flask, render_template, redirect, session, url_for, flash, request
 from flask_bootstrap import Bootstrap
-from flask_login import UserMixin, LoginManager, login_required, login_user, logout_user
+from flask_login import UserMixin, LoginManager, login_required, login_user, logout_user, current_user, AnonymousUserMixin
 from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm, Form
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
-from wtforms import StringField, SubmitField, BooleanField, PasswordField, ValidationError
+from wtforms import StringField, SubmitField, BooleanField, PasswordField, ValidationError, TextAreaField
 from wtforms.validators import DataRequired, Length, Email, Regexp, EqualTo
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -28,12 +28,8 @@ db = SQLAlchemy(app)
 login_manager = LoginManager(app)
 
 login_manager.session_protection = 'strong'
-login_manager.login_view = 'auth.login'
-
-
-class NameForm(FlaskForm):
-    name = StringField('What is your name?', validators=[DataRequired()])
-    submit = SubmitField('Submit')
+login_manager.login_view = 'login'  # 不满足login_required的跳转
+login_manager.login_message = "请先登录，后使用题库！"
 
 
 class Role(db.Model):
@@ -46,6 +42,14 @@ class Role(db.Model):
         return '<Role %r>' % self.name
 
 
+class Post(db.Model):
+    __tablename__ = 'posts'
+    id = db.Column(db.Integer, primary_key=True)
+    body = db.Column(db.Text)
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
@@ -53,18 +57,10 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(64), unique=True, index=True)
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
     password_hash = db.Column(db.String(128))
-    name = db.Column(db.String(64))
-    location = db.Column(db.String(64))
-    about_me = db.Column(db.Text())
-    member_since = db.Column(db.DateTime(), default=datetime.utcnow)
-    last_seen = db.Column(db.DateTime(), default=datetime.utcnow)
+    posts = db.relationship('Post', backref='author', lazy='dynamic')
 
     def __init__(self, **kwargs):
         super(User, self).__init__(**kwargs)
-
-    def ping(self):
-        self.last_seen = datetime.utcnow()
-        db.session.add(self)
 
     @property
     def password(self):
@@ -79,6 +75,11 @@ class User(UserMixin, db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.username
+
+
+class PostForm(FlaskForm):
+    body = TextAreaField("记录下你今天的学习心情吧，一起分享吧！", validators=[DataRequired()])
+    submit = SubmitField('提交')
 
 
 class LoginForm(Form):
@@ -110,6 +111,16 @@ class RegistrationForm(FlaskForm):
             raise ValidationError('这个用户名已经被使用了')
 
 
+class AnonymousUser(AnonymousUserMixin):
+    def can(self, permissions):
+        return False
+
+    def is_administrator(self):
+        return False
+
+login_manager.anonymous_user = AnonymousUser
+
+
 def db_init():
     db.create_all()
 
@@ -137,21 +148,26 @@ def internal_server_error(e):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    form = NameForm()
+    form = PostForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(username=form.name.data).first()
-        if user is None:
-            user = User(username=form.name.data)
-            db.session.add(user)
-            session['known'] = False
-        else:
-            session['known'] = True
-        session['name'] = form.name.data
-        form.name.data = ''
+        post = Post(body=form.body.data, author=current_user._get_current_object())
+        db.session.add(post)
+        db.session.commit()
         return redirect(url_for('.index'))
-    return render_template('index.html', form=form,
-                           name=session.get('name'), current_time=datetime.utcnow(),
-                           known=session.get('known', False))
+    posts = Post.query.order_by(Post.timestamp.desc()).all()
+    return render_template('index.html', posts=posts, form=form, current_time=datetime.utcnow())
+
+
+@app.route('/community', methods=['GET', 'POST'])
+def community():
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(body=form.body.data, author=current_user._get_current_object())
+        db.session.add(post)
+        db.session.commit()
+        return redirect(url_for('.community'))
+    posts = Post.query.order_by(Post.timestamp.desc()).all()
+    return render_template('community.html', posts=posts, form=form, current_time=datetime.utcnow())
 
 
 @app.route('/auth/login', methods=['GET', 'POST'])
@@ -166,7 +182,7 @@ def login():
     return render_template('auth/login.html', form=form, current_time=datetime.utcnow())
 
 
-@app.route('/auth/login')
+@app.route('/auth/logout')
 @login_required
 def logout():
     logout_user()
@@ -199,5 +215,6 @@ def knowledge():
 
 
 @app.route('/bank')
+@login_required
 def bank():
     return render_template('bank.html', current_time=datetime.utcnow())
