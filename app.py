@@ -53,9 +53,18 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(64), unique=True, index=True)
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
     password_hash = db.Column(db.String(128))
+    name = db.Column(db.String(64))
+    location = db.Column(db.String(64))
+    about_me = db.Column(db.Text())
+    member_since = db.Column(db.DateTime(), default=datetime.utcnow)
+    last_seen = db.Column(db.DateTime(), default=datetime.utcnow)
 
     def __init__(self, **kwargs):
         super(User, self).__init__(**kwargs)
+
+    def ping(self):
+        self.last_seen = datetime.utcnow()
+        db.session.add(self)
 
     @property
     def password(self):
@@ -177,3 +186,14 @@ def register():
         flash('You can now login.')
         return redirect(url_for('login'))
     return render_template('auth/register.html', form=form, current_time=datetime.utcnow())
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html', current_time=datetime.utcnow())
+
+
+@app.route('/knowledge')
+def knowledge():
+    return render_template('knowledge.html')
+
