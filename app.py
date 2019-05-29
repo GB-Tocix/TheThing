@@ -195,5 +195,9 @@ def about():
 
 @app.route('/knowledge')
 def knowledge():
-    return render_template('knowledge.html')
+    return render_template('knowledge.html', current_time=datetime.utcnow())
 
+
+@app.route('/bank')
+def bank():
+    return render_template('bank.html', current_time=datetime.utcnow())
