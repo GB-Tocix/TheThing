@@ -16,10 +16,10 @@
             -webkit-box-shadow:2px 2px 5px #333333;
             box-shadow: 2px 4px 8px #285a63;">
       <ul class="nav nav-pills nav-stacked">
-        <li><a href="/bankA"><button type="button" class="btn btn-warning">黄金从业</button></a></li>
-        <li><a href="/bankB"><button type="button" class="btn btn-success">银行从业</button></a></li>
-        <li><a href="/bankC"><button type="button" class="btn btn-info">证券从业</button></a></li>
-        <li class="active"><a href="/bankD"><button type="button" class="btn btn-danger">期货从业</button></a></li>
+        <li><a href="{{ url_for('bankA', tar=1) }}"><button type="button" class="btn btn-warning">黄金从业 &nbsp;&nbsp;&nbsp;&nbsp;<span class="badge" style="float: right;">108</span></button></a></li>
+        <li><a href="{{ url_for('bankB', tar=1) }}"><button type="button" class="btn btn-success">银行从业 &nbsp;&nbsp;&nbsp;&nbsp;<span class="badge" style="float: right;">121</span></button></a></li>
+        <li><a href="{{ url_for('bankC', tar=1) }}"><button type="button" class="btn btn-info">证券从业 &nbsp;&nbsp;&nbsp;&nbsp;<span class="badge" style="float: right;">137</span></button></a></li>
+        <li class="active"><a href="{{ url_for('bankD', tar=1) }}"><button type="button" class="btn btn-danger">期货从业 &nbsp;&nbsp;&nbsp;&nbsp;<span class="badge" style="float: right;">145</span></button></a></li>
       </ul>
 </div>
 <div id="middle" style="width:60%;float:left">
@@ -36,6 +36,36 @@
     <p>{{ question }}</p>
     {{wtf.quick_form(form)}}
     <br>
+</div>
+
+<div id="right" style="width:25%;float:right">
+<div class="btn-group-vertical  col-md-offset-6" role="group" aria-label="...">
+  <button type="button" class="btn btn-default {% if cur==1 %}active{% endif %}" href="{{ url_for('bankD', tar=1) }}">1</button>
+  <button type="button" class="btn btn-default {% if cur==2 %}active{% endif %}" href="{{ url_for('bankD', tar=2) }}">2</button>
+    <button type="button" class="btn btn-default {% if cur==3 %}active{% endif %}" href="{{ url_for('bankD', tar=3) }}">3</button>
+  <button type="button" class="btn btn-default {% if cur==4 %}active{% endif %}" href="{{ url_for('bankD', tar=4) }}">4</button>
+   <button type="button" class="btn btn-default {% if cur==5 %}active{% endif %}" href="{{ url_for('bankD', tar=2) }}">5</button>
+  <button type="button" class="btn btn-default {% if cur==6 %}active{% endif %}" href="{{ url_for('bankD', tar=3) }}">6</button>
+
+  <div class="btn-group dropup" role="group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      选择更多
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="{{ url_for('bankD', tar=2) }}">7</a></li>
+      <li><a href="{{ url_for('bankD', tar=3) }}">8</a></li>
+        <li><a href="{{ url_for('bankD', tar=4) }}">9</a></li>
+      <li><a href="{{ url_for('bankD', tar=5) }}">10</a></li>
+        <li><a href="{{ url_for('bankD', tar=2) }}">11</a></li>
+      <li><a href="{{ url_for('bankD', tar=5) }}">12</a></li>
+        <li><a href="{{ url_for('bankD', tar=4) }}">13</a></li>
+      <li><a href="{{ url_for('bankD', tar=3) }}">14</a></li>
+        <li><a href="{{ url_for('bankD', tar=2) }}">15</a></li>
+      <li><a href="{{ url_for('bankD', tar=5) }}">...</a></li>
+    </ul>
+  </div>
+</div>
 </div>
 
 {% endblock %}

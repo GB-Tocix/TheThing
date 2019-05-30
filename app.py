@@ -50,28 +50,38 @@ class Post(db.Model):
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
 
-class Done(db.Model):
-    __tablename__='dones'
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'),
-                        primary_key=True)
-    ques_id = db.Column(db.Integer, db.ForeignKey('questions.id'),
-                        primary_key=True)
+class Question():
+    def __init__(self, ques, optA, optB, optC, optD, optX):
+        self.ques = ques
+        self.optA = optA
+        self.optB = optB
+        self.optC = optC
+        self.optD = optD
+        self.optX = optX
 
 
-class Question(db.Model):
-    __tablename__ = 'questions'
-    id = db.Column(db.Integer, primary_key=True)
-    ques = db.Column(db.Text)
-    optA = db.Column(db.Text)
-    optB = db.Column(db.Text)
-    optC = db.Column(db.Text)
-    optD = db.Column(db.Text)
-    optX = db.Column(db.String)
-    bedone = db.relationship('Done',
-                            foreign_keys=[Done.ques_id],
-                            backref=db.backref('ques', lazy='joined'),
-                            lazy='dynamic',
-                            cascade='all, delete-orphan')
+pb = [Question(ques='客户的交易结算资金、证券资产管理客户的委托资产属于客户，与证券公司、指定商业银行、资产托管机构的自有资产( )', optA='A.混合管理', optB='B.相互独立、分别管理', optC='C.适当独立', optD='D.共同管理', optX='2')
+,Question(ques='客户的交易结算资金、证券资产管理客户的委托资产属于客户，与证券公司、指定商业银行、资产托管机构的自有资产( )', optA='A.混合管理', optB='B.相互独立、分别管理', optC='C.适当独立', optD='D.共同管理', optX='2')
+,Question(ques='某投资者预期未来一段时间铜价将会下跌，则投资者最不可能采用的措施是( )', optA='A.卖出仓库中储存的现货铜', optB='B.将其持有的某期货交易所的期货铜多头头寸平仓', optC='C.买入某铜矿公司的股票且此公司披露已将铜价波动风险对冲', optD='D.买入某金融机构发行的挂钩铜期货且看空铜价的结构化产品', optX='3')
+,Question(ques='因持有股票而享有的配股权，从配股除权日起到配股确认日止，如果股票收盘价低于配股价，则配股权的估值价格是( )', optA='A.收盘价高于配股价的差额', optB='B.配股价', optC='C.零', optD='D.收盘价', optX='3')
+,Question(ques='投资政策说明书的制定，主要依据投资者的( )Ⅰ.投资需求Ⅱ.财务状况Ⅲ.投资限制Ⅳ.投资偏好', optA='A.Ⅰ、Ⅱ、Ⅲ', optB='B.Ⅰ、Ⅲ、Ⅳ', optC='C.Ⅰ、Ⅱ、Ⅳ', optD='D.Ⅰ、Ⅱ、Ⅲ、Ⅳ', optX='4')
+,Question(ques='关于利率互换和货币互换的描述，正确的是( )', optA='A.货币互换的合约双方互换的是不同币种为单位的利率', optB='B.利率互换的合约双方交换的是双方认为具有相等经济价值的现金流', optC='C.利率互换的合约双方互换的是不同币种下的相同利率', optD='D.货币互换的合约的一方具有货币交换的权利，而没有货币交换的义务', optX='2')
+,Question(ques='关于债券当期收益率与到期收益率，下列表达正确的是( )', optA='A.当期收益率的变动总是预示着到期收益率的反向变动', optB='B.票面利率不变的情况下，当期收益率的变动总是预示着到期收益率的反向变动', optC='C.票面利率不变的情况下，当期收益率的变动与到期收益率的变动不存在相关性', optD='D.当期收益率的变动总是预示着到期收益率的同向变动', optX='4')
+,Question(ques='关于股票型指数基金，以下表述错误的是( )', optA='A.跟踪指数可以是综合指数，也可以是行业分类指数', optB='B.可以采用完全复制方法，也可以采用抽样复制方法来构造股票组合', optC='C.股票型指数基金的投资对象可能包括货币市场工具和现金资产', optD='D.股票型指数基金的业绩取决于基金经理的选股能力', optX='4')
+,Question(ques='对于采用自下而上策略的股票型基金，以下说法错误的是( )', optA='A.个股的选择与权重受到基金契约、基金合规等方面的限制', optB='B.股票投资比例主要取决于基金经理对宏观经济形势的预测', optC='C.基金经理可不考虑行业与风格的配置，只是选择个股', optD='D.基金资产中股票的配置比例不低于80%', optX='2')
+,Question(ques='货币市场工具不包括( )', optA='A.397天以内的资产支持专项计划', optB='B.1年以内的债券回购', optC='C.1年以内的定期存款', optD='D.397天以内的债券', optX='2')
+,Question(ques='( )是基金估值的第一责任主体', optA='A.托管机构', optB='B.中国证券投资基金业协会', optC='C.基金管理公司', optD='D.中国证券业协会', optX='3')
+,Question(ques='上海黄金交易所系统在撮合成交时，当前一成交价≥买入价≥卖出价时，则撮合成交价为( )', optA='A.买入价', optB='B.前一成交价', optC='C.卖出价', optD='D.都不对', optX='1')
+,Question(ques='下列有关现货延期Au(T+D)合约与黄金期货合约的不同点，说法正确的是( )', optA='A.Au(T+D)每个交易日都可以进行交收申报，而黄金期货则在指定日期进行交割，其他时间不能交割。', optB='B.Au(T+D)不是保证金交易品种，不能进行双向交易，而黄金期货则是保证金交易品种，可以进行双向交易。', optC='C.Au(T+D)利用延期补偿费机制来平抑供求矛盾，而黄金期货则利用中立仓机制满足交收需求。', optD='D.投资者可以利用Au(T+D)进行套期保值交易，而黄金期货则不具备套期保值功能。', optX='1')
+,Question(ques='现货实盘交易中，当天卖出黄金的资金，（ ）可用于当天的交易。', optA='A.70%', optB='B.80%', optC='C.90%', optD='D.100%', optX='4')
+,Question(ques='上海金人民币定价交易是指市场参与者在交易所平台上，按照（ ）的集中交易方式，在达到市场量价相对平衡后，最终形成上海金人民币基准价的交易)', optA='A.以价询量、数量撮合', optB='B.时间优先、价格优先', optC='C.最大成交量、最小剩余量', optD='D.以价询量、价格优先', optX='1')
+,Question(ques='询价业务常见的交易类型不包括( )', optA='A.即期', optB='B.远期', optC='C.掉期', optD='D.期货', optX='4')
+,Question(ques='某套利者买入5月份大豆期货合约的同时卖出9月份大豆期货合约，价格分别为3850元/吨和3900元/吨，平仓时两个合约的期货价格分别变为3910元/吨和3930元/吨，则该套利者平仓时的价差为()元/吨。', optA='A.-20', optB='B.-50', optC='C.20', optD='D.50', optX='3')
+,Question(ques='我国客户下单的方式中，最主要的方式是( )', optA='A.书面下单', optB='B.电话下单', optC='C.互联网下单', optD='D.口头下单', optX='3')
+,Question(ques='需求量的变动一般是指在影响需求的其他因素不变的前提下，由于()变化所引起的对该产品需求的变化。( )', optA='A.收入水平', optB='B.相关商品价格', optC='C.产品本身价格', optD='D.预期与偏好', optX='3')
+,Question(ques='某出口商担心日元贬值而采取套期保值，可以( )', optA='A.买入日元期货买权', optB='B.卖出欧洲日元期货', optC='C.卖出日元期货', optD='D.卖出日元期货卖权', optX='3')
+,Question(ques='某行权价为210元的看跌期权，对应的标的资产当前价格为207元，当前该期权的权利金为8元时，该期权的时间价值为()元。', optA='A.3', optB='B.5', optC='C.8', optD='D.11', optX='2')]
+
 
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
@@ -81,11 +91,7 @@ class User(UserMixin, db.Model):
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
     password_hash = db.Column(db.String(128))
     posts = db.relationship('Post', backref='author', lazy='dynamic')
-    done = db.relationship('Done',
-                           foreign_keys=[Done.user_id],
-                           backref=db.backref('user', lazy='joined'),
-                           lazy='dynamic',
-                           cascade='all, delete-orphan')
+
 
     def __init__(self, **kwargs):
         super(User, self).__init__(**kwargs)
@@ -103,19 +109,6 @@ class User(UserMixin, db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.username
-
-    def func_done(self, ques):
-        if not self.is_done(ques):
-            d = Done(user=self, ques=ques)
-            db.session.add(d)
-
-    def func_undone(self, ques):
-        d = self.done.filter_by(ques_id=ques.id).first()
-        if d:
-            db.session.delete(d)
-
-    def is_done(self, ques):
-        return self.done.filter_by(ques_id=ques.id).first() is not None
 
 
 class PostForm(FlaskForm):
@@ -256,11 +249,11 @@ def knowledge():
     return render_template('knowledge.html', current_time=datetime.utcnow())
 
 
-@app.route('/bankA', methods=['GET', 'POST'])
+@app.route('/bankA/<tar>', methods=['GET', 'POST'])
 @login_required
 def bankA(tar):
     class QuestionForm(Form):
-        tmpQ = pb[5 + tar]
+        tmpQ = pb[10 + int(tar)]
         option = RadioField('Label', choices=[
             ('1', tmpQ.optA),
             ('2', tmpQ.optB),
@@ -290,14 +283,14 @@ def bankA(tar):
         else:
             condition = 2
 
-    return render_template('bankA.html', condition=condition, form=form, question=question, current_time=datetime.utcnow())
+    return render_template('bankA.html', cur=int(tar), condition=condition, form=form, question=question, current_time=datetime.utcnow())
 
 
-@app.route('/bankB', methods=['GET', 'POST'])
+@app.route('/bankB/<tar>', methods=['GET', 'POST'])
 @login_required
-def bankB(tar=1):
+def bankB(tar):
     class QuestionForm(Form):
-        tmpQ = pb[5 + tar]
+        tmpQ = pb[5 + int(tar)]
         option = RadioField('Label', choices=[
             ('1', tmpQ.optA),
             ('2', tmpQ.optB),
@@ -327,14 +320,14 @@ def bankB(tar=1):
         else:
             condition = 2
 
-    return render_template('bankB.html', condition=condition, form=form, question=question, current_time=datetime.utcnow())
+    return render_template('bankB.html', cur=int(tar), condition=condition, form=form, question=question, current_time=datetime.utcnow())
 
 
-@app.route('/bankC', methods=['GET', 'POST'])
+@app.route('/bankC/<tar>', methods=['GET', 'POST'])
 @login_required
-def bankC(tar=1):
+def bankC(tar):
     class QuestionForm(Form):
-        tmpQ = pb[10 + tar]
+        tmpQ = pb[int(tar)]
         option = RadioField('Label', choices=[
             ('1', tmpQ.optA),
             ('2', tmpQ.optB),
@@ -364,14 +357,14 @@ def bankC(tar=1):
         else:
             condition = 2
 
-    return render_template('bankC.html', condition=condition, form=form, question=question, current_time=datetime.utcnow())
+    return render_template('bankC.html', cur=int(tar), condition=condition, form=form, question=question, current_time=datetime.utcnow())
 
 
-@app.route('/bankD', methods=['GET', 'POST'])
+@app.route('/bankD/<tar>', methods=['GET', 'POST'])
 @login_required
-def bankD(tar=1):
+def bankD(tar):
     class QuestionForm(Form):
-        tmpQ = pb[15 + tar]
+        tmpQ = pb[15 + int(tar)]
         option = RadioField('Label', choices=[
             ('1', tmpQ.optA),
             ('2', tmpQ.optB),
@@ -401,7 +394,7 @@ def bankD(tar=1):
         else:
             condition = 2
 
-    return render_template('bankD.html', condition=condition, form=form, question=question, current_time=datetime.utcnow())
+    return render_template('bankD.html', cur=int(tar), condition=condition, form=form, question=question, current_time=datetime.utcnow())
 
 
 @app.route('/knowledge/2')
