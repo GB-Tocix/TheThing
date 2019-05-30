@@ -1,23 +1,133 @@
-{% extends "base.html" %}
-
-{% block title %}从业刷 - 关于{% endblock %}
-
 {% block page_content %}
-    <div class="page-header">
-    <h1>从业刷 - 关于</h1>
-    </div>
-    <div class="page-header">
-    <h2>制作人</h2>
-    <h4>皮皮帆</h4>
-    <h4>gbtx</h4>
-    </div>
-    <div class="page-header">
-    <h2>鸣谢</h2>
-    <h4>南京大学豹肝社</h4>
-    <h4>NJU獒夜联盟</h4>
-    <h4>江苏关爱智障人士志愿者协会</h4>
-    <h4>东方秃头者协会</h4>
-    <h4>中国大学生自学成才委员会</h4>
-    </div>
+    <!--============ All CSS Links ===========-->
+    <link rel="stylesheet" href="/static/bootstrap-4.0.0-beta.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/ionicons.css">
+    <link rel="stylesheet" href="/static/plugins/slick/slick.css">
+    <link rel="stylesheet" href="/static/plugins/slick/slick-theme.css">
+    <link rel="stylesheet" href="/static/css/app.css">
+    <link rel="stylesheet" href="/static/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,900|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond:500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!--=== about us ===-->
+    <section id="about" class="about-us">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 align-self-center">
+                    <div class="about-wrap">
+                        <div class="section-title"><h2>欢迎来到从业刷！</h2></div>
+                        <div class="section-tag"><h4>关于我们</h4></div>
+                        <br>
+                        <h5>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本项目以中国证券投资基金协会发布的三大主要从业人员资格考试为主体,通过在线练习、及时纠错、复习资料、在线课堂等多种方式，全方位指导备考人群科学备考，合理学习，加强对中国金融市场的理解，增强从业人员的知识储备,进而提高从业人员质量。
+                        </h5>
+                    </div>
+                </div>
+                <div class="col-lg-6 align-self-center">
+                    <div class="about-image text-center">
+                        <div><img class="img-fluid" src="/static/images/hello.png" alt="About Us"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	<div class="tlinks">Collect from <a href="http://www.cssmoban.com/" >自助建站</a></div>
+
+    <!--=== testimonial & clients ===-->
+    <section id="testimonial" class="testimonial">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title-wrap text-center">
+                        <div class="section-title"><h2>关于我们</h2></div>
+                        <div class="section-tag">开发人员</div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
+                    <div id="testimonial-slider" class="testimonial-slider">
+                        <div class="slider-item">
+                            <div class="testimonial-wrap mx-auto">
+                                <div class="testimon-detail">
+                                    <div class="testimon-icon"><i class="ion ion-quote"></i></div>
+                                    <strong>宫本拓虚</strong>
+                                    <h4>总负责人，负责网站建设的后台数据库、逻辑实现，和网站的整体框架搭建。</h4>
+                                </div>
+                                <div class="testimon-img-wrap">
+                                    <div class="testimon-img"><img src="/static/images/gbtx.png" alt="Profile Image"></div>
+                                    <div class="testimon-name">黄鑫豪</div>
+                                    <div class="testimon-tag">liangzhijie@nju.edu.cn</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-item">
+                            <div class="testimonial-wrap mx-auto">
+                                <div class="testimon-detail">
+                                    <div class="testimon-icon"><i class="ion ion-quote"></i></div>
+                                    <strong>皮皮帆</strong>
+                                    <h4>负责网站界面设计与首页、资料专区、关于部分的实现。</h4>
+                                </div>
+                                <div class="testimon-img-wrap">
+                                    <div class="testimon-img"><img src="/static/images/ppf.png" alt="Profile Image"></div>
+                                    <div class="testimon-name">杨 帆</div>
+                                    <div class="testimon-tag">yfkk@nju.edu.cn</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-item">
+                            <div class="testimonial-wrap mx-auto">
+                                <div class="testimon-detail">
+                                    <div class="testimon-icon"><i class="ion ion-quote"></i></div>
+                                    <strong>陈朋友</strong>
+                                    <h4>负责金融学习网站副产品app的移动端实现。</h4>
+                                </div>
+                                <div class="testimon-img-wrap">
+                                    <div class="testimon-img"><img src="/static/images/cpy.png" alt="Profile Image"></div>
+                                    <div class="testimon-name">陈鹏宇</div>
+                                    <div class="testimon-tag">nanshencpy@nju.edu.cn</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-item">
+                            <div class="testimonial-wrap mx-auto">
+                                <div class="testimon-detail">
+                                    <div class="testimon-icon"><i class="ion ion-quote"></i></div>
+                                    <strong>7+6</strong>
+                                    <h4>我无话可说……</h4>
+                                </div>
+                                <div class="testimon-img-wrap">
+                                    <div class="testimon-img"><img src="/static/images/qjl.png" alt="Profile Image"></div>
+                                    <div class="testimon-name">齐家乐</div>
+                                    <div class="testimon-tag">qjl@nju.edu.cn</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+            <!--=== contact us ===-->
+    <section class="call-to-action">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="call-to-action-wrap">
+                        <div class="call-to-action-title">
+                            <h2 class="text-center">联系我们？以获取更多备考信息。</h2>
+                            <br>
+                            <div class="text-center"><a href="#" class="btn btn-primary main-btn" data-complete-text="Loading finished" >现在点击</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!--============ JavaScript ===========-->
+    <script src="/static/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="/static/bootstrap-4.0.0-beta.3-dist/js/bootstrap.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/plugins/slick/slick.min.js"></script>
+    <script src="/static/js/app.js"></script>
 {% endblock %}
 

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block page_content %}
+<div class="jumbotron text-center" style="color: white; background-image:url('/static/longpic1.png');margin-bottom:0">
+  <h1>书山有路勤为径，学海无涯苦作舟！</h1>
+</div>
+    <br>
+
+<div id="main" style="width:100%;">
+
+<div id="left" style="width:15%;float:left; background-color: rgba(102, 146, 191, 0.44);
+            border: solid 1px rgba(102, 146, 191, 0.68);/*边框*/
+            border-radius: 10px;/*边角弧度*/
+            -moz-box-shadow:2px 2px 5px #333333; /*阴影*/
+            -webkit-box-shadow:2px 2px 5px #333333;
+            box-shadow: 2px 4px 8px #285a63;">
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="/bankA"><button type="button" class="btn btn-warning">黄金从业</button></a></li>
+        <li><a href="/bankB"><button type="button" class="btn btn-success">银行从业</button></a></li>
+        <li><a href="/bankC"><button type="button" class="btn btn-info">证券从业</button></a></li>
+        <li class="active"><a href="/bankD"><button type="button" class="btn btn-danger">期货从业</button></a></li>
+      </ul>
+</div>
+<div id="middle" style="width:60%;float:left">
+    {% if condition == 0 %}
+        <div class="col-md-6  col-md-offset-3" style="background: #e3e3e3">
+    {% endif %}
+    {% if condition == 2 %}
+        <div class="col-md-6  col-md-offset-3" style="background: #f2dede">
+    {% endif %}
+    {% if condition == 1 %}
+        <div class="col-md-6  col-md-offset-3" style="background: #d6e9c6">
+    {% endif %}
+    <br>
+    <p>{{ question }}</p>
+    {{wtf.quick_form(form)}}
+    <br>
+</div>
+
+{% endblock %}

@@ -9,7 +9,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm, Form
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
-from wtforms import StringField, SubmitField, BooleanField, PasswordField, ValidationError, TextAreaField
+from wtforms import StringField, SubmitField, BooleanField, PasswordField, ValidationError, TextAreaField, RadioField
 from wtforms.validators import DataRequired, Length, Email, Regexp, EqualTo
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -50,6 +50,29 @@ class Post(db.Model):
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
 
+class Done(db.Model):
+    __tablename__='dones'
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'),
+                        primary_key=True)
+    ques_id = db.Column(db.Integer, db.ForeignKey('questions.id'),
+                        primary_key=True)
+
+
+class Question(db.Model):
+    __tablename__ = 'questions'
+    id = db.Column(db.Integer, primary_key=True)
+    ques = db.Column(db.Text)
+    optA = db.Column(db.Text)
+    optB = db.Column(db.Text)
+    optC = db.Column(db.Text)
+    optD = db.Column(db.Text)
+    optX = db.Column(db.String)
+    bedone = db.relationship('Done',
+                            foreign_keys=[Done.ques_id],
+                            backref=db.backref('ques', lazy='joined'),
+                            lazy='dynamic',
+                            cascade='all, delete-orphan')
+
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
@@ -58,6 +81,11 @@ class User(UserMixin, db.Model):
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
     password_hash = db.Column(db.String(128))
     posts = db.relationship('Post', backref='author', lazy='dynamic')
+    done = db.relationship('Done',
+                           foreign_keys=[Done.user_id],
+                           backref=db.backref('user', lazy='joined'),
+                           lazy='dynamic',
+                           cascade='all, delete-orphan')
 
     def __init__(self, **kwargs):
         super(User, self).__init__(**kwargs)
@@ -75,6 +103,19 @@ class User(UserMixin, db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.username
+
+    def func_done(self, ques):
+        if not self.is_done(ques):
+            d = Done(user=self, ques=ques)
+            db.session.add(d)
+
+    def func_undone(self, ques):
+        d = self.done.filter_by(ques_id=ques.id).first()
+        if d:
+            db.session.delete(d)
+
+    def is_done(self, ques):
+        return self.done.filter_by(ques_id=ques.id).first() is not None
 
 
 class PostForm(FlaskForm):
@@ -117,6 +158,7 @@ class AnonymousUser(AnonymousUserMixin):
 
     def is_administrator(self):
         return False
+
 
 login_manager.anonymous_user = AnonymousUser
 
@@ -214,7 +256,154 @@ def knowledge():
     return render_template('knowledge.html', current_time=datetime.utcnow())
 
 
-@app.route('/bank')
+@app.route('/bankA', methods=['GET', 'POST'])
 @login_required
-def bank():
-    return render_template('bank.html', current_time=datetime.utcnow())
+def bankA(tar):
+    class QuestionForm(Form):
+        tmpQ = pb[5 + tar]
+        option = RadioField('Label', choices=[
+            ('1', tmpQ.optA),
+            ('2', tmpQ.optB),
+            ('3', tmpQ.optC),
+            ('4', tmpQ.optD)],
+                            default=0, validators=[DataRequired()])
+        submit = SubmitField('确认')
+
+        def the_answer(self):
+            return self.tmpQ.optX
+
+        def the_question(self):
+            return self.tmpQ.ques
+
+        def the_obj(self):
+            return self.tmpQ
+
+    form = QuestionForm()
+    question = form.the_question()
+    ans = form.the_answer()
+
+    condition = 0
+
+    if form.validate_on_submit():
+        if form.option.data is ans:
+            condition = 1
+        else:
+            condition = 2
+
+    return render_template('bankA.html', condition=condition, form=form, question=question, current_time=datetime.utcnow())
+
+
+@app.route('/bankB', methods=['GET', 'POST'])
+@login_required
+def bankB(tar=1):
+    class QuestionForm(Form):
+        tmpQ = pb[5 + tar]
+        option = RadioField('Label', choices=[
+            ('1', tmpQ.optA),
+            ('2', tmpQ.optB),
+            ('3', tmpQ.optC),
+            ('4', tmpQ.optD)],
+                            default=0, validators=[DataRequired()])
+        submit = SubmitField('确认')
+
+        def the_answer(self):
+            return self.tmpQ.optX
+
+        def the_question(self):
+            return self.tmpQ.ques
+
+        def the_obj(self):
+            return self.tmpQ
+
+    form = QuestionForm()
+    question = form.the_question()
+    ans = form.the_answer()
+
+    condition = 0
+
+    if form.validate_on_submit():
+        if form.option.data is ans:
+            condition = 1
+        else:
+            condition = 2
+
+    return render_template('bankB.html', condition=condition, form=form, question=question, current_time=datetime.utcnow())
+
+
+@app.route('/bankC', methods=['GET', 'POST'])
+@login_required
+def bankC(tar=1):
+    class QuestionForm(Form):
+        tmpQ = pb[10 + tar]
+        option = RadioField('Label', choices=[
+            ('1', tmpQ.optA),
+            ('2', tmpQ.optB),
+            ('3', tmpQ.optC),
+            ('4', tmpQ.optD)],
+                            default=0, validators=[DataRequired()])
+        submit = SubmitField('确认')
+
+        def the_answer(self):
+            return self.tmpQ.optX
+
+        def the_question(self):
+            return self.tmpQ.ques
+
+        def the_obj(self):
+            return self.tmpQ
+
+    form = QuestionForm()
+    question = form.the_question()
+    ans = form.the_answer()
+
+    condition = 0
+
+    if form.validate_on_submit():
+        if form.option.data is ans:
+            condition = 1
+        else:
+            condition = 2
+
+    return render_template('bankC.html', condition=condition, form=form, question=question, current_time=datetime.utcnow())
+
+
+@app.route('/bankD', methods=['GET', 'POST'])
+@login_required
+def bankD(tar=1):
+    class QuestionForm(Form):
+        tmpQ = pb[15 + tar]
+        option = RadioField('Label', choices=[
+            ('1', tmpQ.optA),
+            ('2', tmpQ.optB),
+            ('3', tmpQ.optC),
+            ('4', tmpQ.optD)],
+                            default=0, validators=[DataRequired()])
+        submit = SubmitField('确认')
+
+        def the_answer(self):
+            return self.tmpQ.optX
+
+        def the_question(self):
+            return self.tmpQ.ques
+
+        def the_obj(self):
+            return self.tmpQ
+
+    form = QuestionForm()
+    question = form.the_question()
+    ans = form.the_answer()
+
+    condition = 0
+
+    if form.validate_on_submit():
+        if form.option.data is ans:
+            condition = 1
+        else:
+            condition = 2
+
+    return render_template('bankD.html', condition=condition, form=form, question=question, current_time=datetime.utcnow())
+
+
+@app.route('/knowledge/2')
+def reality():
+    return render_template('reality.html', current_time=datetime.utcnow())

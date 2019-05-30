@@ -14,17 +14,126 @@
 {% block title %}从业刷 - 首页{% endblock %}
 
 {% block page_content %}
+    <link rel="stylesheet" href="/static/css/style.css">
 <div class="page-header">
-    <h1>你好,
-        {% if current_user.is_authenticated %}
-            {{ current_user.username }}
-        {% else %}
-            游客
-        {% endif %}
-        ！欢迎来到从业刷 (ฅ>ω<*ฅ)
-    </h1>
+    <div class="laboratory-header layout-no-margin-top">
+    <h1 class="laboratory-title">全方位备考指导<br>让求职之路畅通无阻</h1>
 </div>
-<div>
+<div class="laboratory-des-con">
+    <div class="container">
+        <div class="laboratory-des col-md-6">
+            <div class="media laboratory-des-item">
+                <div class="media-left media-middle">
+                    <a><img src="/static/images/laboratory-higheffic.png"></a>
+                </div>
+                <div class="media-body">
+                    <h4 class="laboratory-des-title">在线练习</h4>
+                    <p class="laboratory-des-text">考试前沿，海量题库，在练习中提升</p>
+                </div>
+            </div>
+            <div class="media laboratory-des-item">
+                <div class="media-left media-middle">
+                    <a><img src="/static/images/laboratory-nimble.png"></a>
+                </div>
+                <div class="media-body">
+                    <h4 class="laboratory-des-title">学习资料</h4>
+                    <p class="laboratory-des-text">搜集最新考试资讯，输送高频高点和经典课程</p>
+                </div>
+            </div>
+            <div class="media laboratory-des-item">
+                <div class="media-left media-middle">
+                    <a><img src="/static/images/laboratory-proper.png"></a>
+                </div>
+                <div class="media-body">
+                    <h4 class="laboratory-des-title">在线社区</h4>
+                    <p class="laboratory-des-text">交流平台，共同进步</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <br class="laboratory-apply-con">
+                <h4 class="laboratory-apply-title">从业刷，可以做什么？</h4>
+                <div class="laboratory-apply-text">
+                    <p>无论是应届毕业生还是已毕业的求职人群，都奔波在考证的道路上，致力于取得进入行业的“敲门砖”。</p>
+                    <p>对广大求职人群给予专业的指导，增加他们对于金融行业的理解，进而提升我国金融市场的从业人员质量，对于规范行业发展、提升总体经济实力，都有着重要的作用。</p>
+                    <p>以中国证券投资基金协会发布的三大主要从业人员资格考试为主体，通过在线练习、及时纠错、复习资料、在线课堂等多种方式，全方位指导备考人群科学备考，合理学习，加强对中国金融市场的理解，增强从业人员的知识储备，进而提高从业人员质量。 </p>
+                    <p>......</p>
+                </div>
+                <br></br>
+             <br></br>
+                <a href="http://form.mikecrm.com/f.php?t=A4qEXq" class="laboratory-apply-btn" target="_blank">填写表单，申请开课</a>
+                <div class="laboratory-apply-warning">欢迎高校老师 / 机构讲师 / 技术博主申请。</div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- 通知公告 -->
+
+    <section>
+	<div class="banner-bottom">
+    <h3 class="text-left"><span class="glyphicon glyphicon-home" style="color: rgb(31, 171, 217); font-size: 26px;">&nbsp;通知公告</span></h3>
+		<div class="container">
+			<div class="col-md-4 w3l_services_footer_top_left">
+                <br></br>
+				<img src="/static/images/test-time.jpg" alt=" " class="img-responsive" />
+			</div>
+			<div class="col-md-8 w3l_services_footer_top_right">
+				<div class="w3l_services_footer_top_right_main">
+					<div class="w3l_services_footer_top_right_main_l">
+						<h3><span class="glyphicon glyphicon-log-in" style="color: rgb(0, 0, 0); font-size: 23px;">&nbsp;报名通道</span></h3>
+					</div>
+					<div class="w3l_services_footer_top_right_main_l1">
+						<div class="w3ls_service_icon">
+							<i class="fa fa-globe" aria-hidden="true"></i>
+						</div>
+					</div>
+					<div class="w3l_services_footer_top_right_main_r">
+						<a href="http://www.sac.net.cn/cyry/kspt/ksbm/" target="_blank">点击进入</a>
+						<p>考试报名 从业人员 考试平台 资格平台 培训中心 下载 考试报名· 2017年12月14日高...</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="w3l_services_footer_top_right_main">
+					<div class="w3l_services_footer_top_right_main_l">
+		        <h3><span class="glyphicon glyphicon-user" style="color: rgb(0, 0, 0); font-size: 23px;">&nbsp;成绩查询</span></h3>
+					</div>
+					<div class="w3l_services_footer_top_right_main_l1">
+						<div class="w3ls_service_icon">
+							<i class="fa fa-map" aria-hidden="true"></i>
+						</div>
+					</div>
+					<div class="w3l_services_footer_top_right_main_r">
+						<a href="http://www.sac.net.cn/cyry/kspt/kscjcx/" target="_blank">点击进入</a>
+                        <p>从业人员 考试平台 资格平台 培训中心 下载 考试成绩查询· 2017年11月16...</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="w3l_services_footer_top_right_main">
+					<div class="w3l_services_footer_top_right_main_l">
+                      <h3><span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(0, 0, 0); font-size: 23px;">&nbsp;考试通知</span></h3>
+					</div>
+					<div class="w3l_services_footer_top_right_main_l1">
+						<div class="w3ls_service_icon">
+							<i class="fa fa-pie-chart" aria-hidden="true"></i>
+						</div>
+					</div>
+					<div class="w3l_services_footer_top_right_main_r">
+                        <a href="http://www.sac.net.cn/cyry/kspt/kstz/" target="_blank">点击进入</a>
+						<p>考试通知· 2017年12月证券业从业人员资格考试公告 2017-10-17 · 关于证...</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+    </section>
+    <hr>
+<!-- //考试时间速递 -->
+<!---实时评论-->
+    <section>
+<div class="banner-bottom">
+    <h3 class="text-left"><span class="glyphicon glyphicon-envelope" style="color: rgb(31, 171, 217); font-size: 26px;">&nbsp;在线社区</span></h3>
     {% if current_user.is_authenticated %}
     {{ wtf.quick_form(form) }}
     {% endif %}
@@ -42,4 +151,68 @@
     {% endfor %}
 <HR>
 </ul>
+    </section>
+    <hr>
+    <!---//实时评论-->
+    <!--常见疑问-->
+     <section>
+     <div class="banner-bottom">
+    <h3 class="text-left"><span class="glyphicon glyphicon-send" style="color: rgb(31, 171, 217); font-size: 26px;">&nbsp;常见问题</span></h3>
+   <br>
+<style>
+div.one
+{
+	border-right-style:solid;
+	border-color:#DCDCDC;
+    border-width: 0.8px;
+}
+    </style>
+    <div class="row">
+        <div class="col-md-4 one">
+         <ul class="new-list-a">
+<li><a  href="http://www.233.com/zq/baoming/201905/30085749172.html"  target="_blank" title="2019年7月证券从业资格考试报名官网流程（图文）">2019年7月证券从业资格考试报名官网流程（图文）&nbsp;</a><span  style="color:#ff0000">05-31</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/30085110184.html"  target="_blank" title="2019年7月证券从业什么时候报名？什么时候考试？">2019年7月证券从业什么时候报名？什么时候考试？&nbsp;</a><span  style="color:#ff0000">05-31</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/28083905170.html"  target="_blank" title="2019年7月证券从业资格考试报名时间和考试时间安排">2019年7月证券从业报名时间和考试时间安排&nbsp;</a><span>05-28</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/24094410903.html"  target="_blank" title="重要通知：5月25日-26日证券业协会网站暂停报名">重要通知：5月25日-26日证券业协会网站暂停报名&nbsp;</a><span>05-24</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/24085453467.html"  target="_blank" title="2019年证券从业资格考试9月考试什么时候报名">2019年证券从业资格考试9月考试什么时候报名&nbsp;</a><span>05-24</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/24082854232.html"  target="_blank" title="2019年证券从业下半年考试时间还有三次安排">2019年证券从业下半年考试时间还有三次安排&nbsp;</a><span>05-24</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/24082350107.html"  target="_blank" title="2019年7月证券从业考试报名入口6月13日15点关闭">2019年7月证券从业考试报名入口6月13日15点关闭&nbsp;</a><span>05-24</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/22091553884.html"  target="_blank" title="2019年下半年证券从业资格考试时间安排(3次)">2019年下半年证券从业资格考试时间安排(3次)&nbsp;</a><span>05-22</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/20083832366.html"  target="_blank" title="2019年第4次证券从业考试报名时间：5月20日15点起">2019年第4次证券从业考试报名时间：5月20日15点起&nbsp;</a><span>05-21</span></li>
+<li><a  href="http://www.233.com/zq/zhuanti/bksj2019/"  target="_blank" title="【专题】2019年证券从业报名时间和考试时间">【专题】2019年证券从业报名时间和考试时间&nbsp;</a><span>05-21</span></li>
+</ul>
+  </div>
+        <div class="col-md-4 one">
+      <ul class="new-list-a mt15">
+<li><a  href="http://www.233.com/zq/baoming/201905/15082025773.html"  target="_blank" title="2019年7月证券从业资格考试报名入口(5.20-6.13)">2019年7月证券从业资格考试报名入口(5.20-6.13)&nbsp;</a><span>05-20</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/17095421778.html"  target="_blank" title="2019年7月证券从业资格考试报名网站：中证协">2019年7月证券从业资格考试报名网站：中证协&nbsp;  </a><span>05-20</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/20090454777.html"  target="_blank" title="2019年7月证券专项考试网上报名入口今日15点开通">2019年7月证券专项考试网上报名入口今日15点开通&nbsp; </a><span>05-20</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/20085751146.html"  target="_blank" title="2019年7月证券从业资格考试网上报名入口今日15点开通">2019年7月证券从业考试网上报名入口今日15点开通&nbsp;</a><span>05-20</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/20084850377.html"  target="_blank" title="2019年第4次证券从业考试时间：7月6日-7月7日">2019年第4次证券从业考试时间：7月6日-7月7日</a><span>&nbsp; 05-20</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/17100417944.html"  target="_blank" title="2019年7月证券从业考试开考四科，你可以报几科？">2019年7月证券从业考试开考四科，你可以报几科？&nbsp; </a><span>05-17</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/16093505712.html"  target="_blank" title="预告！下周一15点开始7月证券从业资格考试报名">预告！下周一15点开始7月证券从业资格考试报名&nbsp;</a><span>05-16</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/16091435362.html"  target="_blank" title="2019年7月证券从业资格考试在全国40个城市举行">2019年7月证券从业资格考试在全国40个城市举行&nbsp;</a><span>05-16</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/14155804460.html"  target="_blank" title="2019年7月证券从业报名公告发布，5月20日起报名">2019年7月证券从业报名公告发布，5月20日起报名&nbsp; </a><span>05-14</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/14082915539.html"  target="_blank" title="2019年证券从业考试时间：6月1日-6月2日(第三次)">2019年证券从业考试时间：6月1日-6月2日(第三次)&nbsp;</a><span>05-14</span></li>
+</ul>
+  </div>
+        <div class="col-md-4">
+      <ul class="new-list-a mt15">
+<li><a  href="http://www.233.com/zq/baoming/201905/15082025773.html"  target="_blank" title="2019年7月证券从业资格考试报名入口(5.20-6.13)">2019年7月证券从业资格考试报名入口(5.20-6.13)&nbsp; </a><span>05-20</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/17095421778.html"  target="_blank" title="2019年7月证券从业资格考试报名网站：中证协">2019年7月证券从业资格考试报名网站：中证协&nbsp;</a><span>05-20</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/20090454777.html"  target="_blank" title="2019年7月证券专项考试网上报名入口今日15点开通">2019年7月证券专项考试网上报名入口今日15点开通&nbsp;</a><span>05-20</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/20085751146.html"  target="_blank" title="2019年7月证券从业资格考试网上报名入口今日15点开通">2019年7月证券从业考试网上报名入口今日15点开通&nbsp;</a><span>05-20</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/20084850377.html"  target="_blank" title="2019年第4次证券从业考试时间：7月6日-7月7日">2019年第4次证券从业考试时间：7月6日-7月7日&nbsp;</a><span>05-20</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/17100417944.html"  target="_blank" title="2019年7月证券从业考试开考四科，你可以报几科？">2019年7月证券从业考试开考四科，你可以报几科？&nbsp;</a><span>05-17</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/16093505712.html"  target="_blank" title="预告！下周一15点开始7月证券从业资格考试报名">预告！下周一15点开始7月证券从业资格考试报名&nbsp;</a><span>05-16</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/16091435362.html"  target="_blank" title="2019年7月证券从业资格考试在全国40个城市举行">2019年7月证券从业资格考试在全国40个城市举行&nbsp;</a><span>05-16</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/14155804460.html"  target="_blank" title="2019年7月证券从业报名公告发布，5月20日起报名">2019年7月证券从业报名公告发布，5月20日起报名&nbsp;</a><span>05-14</span></li>
+<li><a  href="http://www.233.com/zq/baoming/201905/14082915539.html"  target="_blank" title="2019年证券从业考试时间：6月1日-6月2日(第三次)">2019年证券从业考试时间：6月1日-6月2日(第三次)&nbsp;</a><span>05-14</span></li>
+</ul>
+  </div>
+</div>
+     </div>
+    </section>
+    <!--//常见疑问-->
+    <hr>
 {% endblock %}
