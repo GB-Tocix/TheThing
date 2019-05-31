@@ -65,7 +65,7 @@
                                 <div class="testimon-detail">
                                     <div class="testimon-icon"><i class="ion ion-quote"></i></div>
                                     <strong>皮皮帆</strong>
-                                    <h4>负责网站界面设计与首页、资料专区、关于部分的实现。</h4>
+                                    <h4>负责网站界面设计与首页、资料下载、视频观看下载专区、关于部分功能的实现。</h4>
                                 </div>
                                 <div class="testimon-img-wrap">
                                     <div class="testimon-img"><img src="/static/images/ppf.png" alt="Profile Image"></div>
@@ -93,7 +93,7 @@
                                 <div class="testimon-detail">
                                     <div class="testimon-icon"><i class="ion ion-quote"></i></div>
                                     <strong>7+6</strong>
-                                    <h4>我无话可说……</h4>
+                                    <h4>负责软件需求分析与测试。</h4>
                                 </div>
                                 <div class="testimon-img-wrap">
                                     <div class="testimon-img"><img src="/static/images/qjl.png" alt="Profile Image"></div>
@@ -116,7 +116,19 @@
                         <div class="call-to-action-title">
                             <h2 class="text-center">联系我们？以获取更多备考信息。</h2>
                             <br>
-                            <div class="text-center"><a href="#" class="btn btn-primary main-btn" data-complete-text="Loading finished" >现在点击</a></div>
+                            <div class="text-center"><a href="#" role="button" onclick="myFunction()" class="btn btn-primary main-btn" data-complete-text="Loading finished" >现在点击</a></div>
+                            <p id="demo"></p>
+                            <script>
+                            function myFunction() {
+                                var x;
+                                var person = prompt("请输入你的名字", "宫本拓虚");
+                                if (person != null && person != "") {
+                                    x = "你好 " + person + "～请联系GB-Tocix获取独家app！";
+                                    alert(x);
+                                }
+                            }
+                            </script>
+                            <br>
                         </div>
                     </div>
                 </div>

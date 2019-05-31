@@ -3,14 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a93a3246-8847-4a87-81cd-04b4ca636e68" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/data.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bankA.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bankA.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bankB.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bankB.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bankC.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bankC.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bankD.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bankD.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/videos/0.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/static/videos/0.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/knowledge.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/knowledge.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/reality.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reality.html" afterDir="false" />
     </list>
@@ -44,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="291" column="29" lean-forward="true" selection-start-line="291" selection-start-column="29" selection-end-line="291" selection-end-column="29" />
+            <state relative-caret-position="1241">
+              <caret line="291" column="29" selection-start-line="291" selection-start-column="29" selection-end-line="291" selection-end-column="29" />
               <folding>
                 <element signature="e#18#27#0" expanded="true" />
               </folding>
@@ -58,45 +54,20 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
               <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
-              <folding>
-                <element signature="e#790#796#0#HTML" expanded="true" />
-                <element signature="e#796#802#0#HTML" expanded="true" />
-                <element signature="e#802#808#0#HTML" expanded="true" />
-                <element signature="e#808#814#0#HTML" expanded="true" />
-                <element signature="e#834#855#0#HTML" expanded="true" />
-                <element signature="e#1003#1009#0#HTML" expanded="true" />
-                <element signature="e#1009#1015#0#HTML" expanded="true" />
-                <element signature="e#1015#1021#0#HTML" expanded="true" />
-                <element signature="e#1021#1027#0#HTML" expanded="true" />
-                <element signature="e#1047#1068#0#HTML" expanded="true" />
-                <element signature="e#1198#1204#0#HTML" expanded="true" />
-                <element signature="e#1204#1210#0#HTML" expanded="true" />
-                <element signature="e#1210#1216#0#HTML" expanded="true" />
-                <element signature="e#1216#1222#0#HTML" expanded="true" />
-                <element signature="e#1242#1263#0#HTML" expanded="true" />
-                <element signature="e#1318#1324#0#HTML" expanded="true" />
-                <element signature="e#1324#1330#0#HTML" expanded="true" />
-                <element signature="e#1330#1336#0#HTML" expanded="true" />
-                <element signature="e#1336#1342#0#HTML" expanded="true" />
-                <element signature="e#1362#1383#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="83" column="71" lean-forward="true" selection-start-line="83" selection-start-column="71" selection-end-line="83" selection-end-column="71" />
-              <folding>
-                <element signature="e#3517#3523#0#HTML" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="83" column="71" selection-start-line="83" selection-start-column="71" selection-end-line="83" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/reality.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
@@ -113,30 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/bankC.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
+            <state relative-caret-position="882">
               <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
-              <folding>
-                <element signature="e#790#796#0#HTML" expanded="true" />
-                <element signature="e#796#802#0#HTML" expanded="true" />
-                <element signature="e#802#808#0#HTML" expanded="true" />
-                <element signature="e#808#814#0#HTML" expanded="true" />
-                <element signature="e#834#855#0#HTML" expanded="true" />
-                <element signature="e#988#994#0#HTML" expanded="true" />
-                <element signature="e#994#1000#0#HTML" expanded="true" />
-                <element signature="e#1000#1006#0#HTML" expanded="true" />
-                <element signature="e#1006#1012#0#HTML" expanded="true" />
-                <element signature="e#1032#1053#0#HTML" expanded="true" />
-                <element signature="e#1198#1204#0#HTML" expanded="true" />
-                <element signature="e#1204#1210#0#HTML" expanded="true" />
-                <element signature="e#1210#1216#0#HTML" expanded="true" />
-                <element signature="e#1216#1222#0#HTML" expanded="true" />
-                <element signature="e#1242#1263#0#HTML" expanded="true" />
-                <element signature="e#1395#1401#0#HTML" expanded="true" />
-                <element signature="e#1401#1407#0#HTML" expanded="true" />
-                <element signature="e#1407#1413#0#HTML" expanded="true" />
-                <element signature="e#1413#1419#0#HTML" expanded="true" />
-                <element signature="e#1439#1460#0#HTML" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -144,33 +93,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/bankD.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
+            <state relative-caret-position="882">
               <caret line="47" column="59" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
-              <folding>
-                <element signature="e#272#291#0#HTML" expanded="true" />
-                <element signature="e#790#796#0#HTML" expanded="true" />
-                <element signature="e#796#802#0#HTML" expanded="true" />
-                <element signature="e#802#808#0#HTML" expanded="true" />
-                <element signature="e#808#814#0#HTML" expanded="true" />
-                <element signature="e#834#855#0#HTML" expanded="true" />
-                <element signature="e#988#994#0#HTML" expanded="true" />
-                <element signature="e#994#1000#0#HTML" expanded="true" />
-                <element signature="e#1000#1006#0#HTML" expanded="true" />
-                <element signature="e#1006#1012#0#HTML" expanded="true" />
-                <element signature="e#1032#1053#0#HTML" expanded="true" />
-                <element signature="e#1183#1189#0#HTML" expanded="true" />
-                <element signature="e#1189#1195#0#HTML" expanded="true" />
-                <element signature="e#1195#1201#0#HTML" expanded="true" />
-                <element signature="e#1201#1207#0#HTML" expanded="true" />
-                <element signature="e#1227#1248#0#HTML" expanded="true" />
-                <element signature="e#1395#1401#0#HTML" expanded="true" />
-                <element signature="e#1401#1407#0#HTML" expanded="true" />
-                <element signature="e#1407#1413#0#HTML" expanded="true" />
-                <element signature="e#1413#1419#0#HTML" expanded="true" />
-                <element signature="e#1439#1460#0#HTML" expanded="true" />
-                <element signature="e#1126#1154#0#HTML" expanded="true" />
-                <element signature="e#1705#1734#0#HTML" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -178,30 +102,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/bankA.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+            <state>
+              <caret selection-end-column="25" />
               <folding>
-                <element signature="e#805#811#0#HTML" expanded="true" />
-                <element signature="e#811#817#0#HTML" expanded="true" />
-                <element signature="e#817#823#0#HTML" expanded="true" />
-                <element signature="e#823#829#0#HTML" expanded="true" />
-                <element signature="e#833#867#0#HTML" expanded="true" />
-                <element signature="e#1002#1008#0#HTML" expanded="true" />
-                <element signature="e#1008#1014#0#HTML" expanded="true" />
-                <element signature="e#1014#1020#0#HTML" expanded="true" />
-                <element signature="e#1020#1026#0#HTML" expanded="true" />
-                <element signature="e#1046#1067#0#HTML" expanded="true" />
-                <element signature="e#1196#1202#0#HTML" expanded="true" />
-                <element signature="e#1202#1208#0#HTML" expanded="true" />
-                <element signature="e#1208#1214#0#HTML" expanded="true" />
-                <element signature="e#1214#1220#0#HTML" expanded="true" />
-                <element signature="e#1240#1261#0#HTML" expanded="true" />
-                <element signature="e#1392#1398#0#HTML" expanded="true" />
-                <element signature="e#1398#1404#0#HTML" expanded="true" />
-                <element signature="e#1404#1410#0#HTML" expanded="true" />
-                <element signature="e#1410#1416#0#HTML" expanded="true" />
-                <element signature="e#1436#1457#0#HTML" expanded="true" />
-                <element signature="e#1126#1154#0#HTML" expanded="true" />
+                <element signature="e#2013#2042#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -210,8 +114,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="62" />
+            <state relative-caret-position="667">
+              <caret line="60" selection-start-line="60" selection-end-line="63" selection-end-column="14" />
+              <folding>
+                <element signature="e#1357#1363#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/about.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="24" lean-forward="true" selection-start-column="24" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -262,12 +178,10 @@
         <option value="$PROJECT_DIR$/templates/auth/logout.html" />
         <option value="$PROJECT_DIR$/templates/auth/login.html" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/bdd18863-b574-49c4-b108-b90cf3b6b8e4/console.sql" />
-        <option value="$PROJECT_DIR$/templates/about.html" />
         <option value="$PROJECT_DIR$/templates/auth/register.html" />
         <option value="$PROJECT_DIR$/templates/auth/community.html" />
         <option value="$PROJECT_DIR$/templates/community.html" />
         <option value="$PROJECT_DIR$/templates/bank.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/reality.html" />
         <option value="$PROJECT_DIR$/templates/knowledge.html" />
         <option value="$PROJECT_DIR$/app.py" />
@@ -276,6 +190,8 @@
         <option value="$PROJECT_DIR$/templates/bankD.html" />
         <option value="$PROJECT_DIR$/templates/bankA.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/about.html" />
       </list>
     </option>
   </component>
@@ -291,6 +207,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -397,7 +314,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -500,15 +416,17 @@
       <workItem from="1559225994356" duration="362000" />
       <workItem from="1559226384477" duration="2099000" />
       <workItem from="1559232344375" duration="8193000" />
-      <workItem from="1559241710349" duration="5909000" />
+      <workItem from="1559241710349" duration="6505000" />
+      <workItem from="1559268853892" duration="1066000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110978000" />
+    <option name="totallyTimeSpent" value="112640000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25370803" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24980484" />
@@ -576,7 +494,7 @@
     </ignored-roots>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/TheThing$TheThing.coverage" NAME="TheThing Coverage Results" MODIFIED="1559242127891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TheThing$TheThing.coverage" NAME="TheThing Coverage Results" MODIFIED="1559268894316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TheThing$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1558952387212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="editorHistoryManager">
@@ -648,13 +566,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="7" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -748,23 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/images/g22.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/reality.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/knowledge.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -772,13 +666,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="file://$PROJECT_DIR$/static/images/g22.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/bankC.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="291" column="29" lean-forward="true" selection-start-line="291" selection-start-column="29" selection-end-line="291" selection-end-column="29" />
-          <folding>
-            <element signature="e#18#27#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="882">
+          <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/bankD.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="47" column="59" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -786,129 +687,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
-          <folding>
-            <element signature="e#790#796#0#HTML" expanded="true" />
-            <element signature="e#796#802#0#HTML" expanded="true" />
-            <element signature="e#802#808#0#HTML" expanded="true" />
-            <element signature="e#808#814#0#HTML" expanded="true" />
-            <element signature="e#834#855#0#HTML" expanded="true" />
-            <element signature="e#1003#1009#0#HTML" expanded="true" />
-            <element signature="e#1009#1015#0#HTML" expanded="true" />
-            <element signature="e#1015#1021#0#HTML" expanded="true" />
-            <element signature="e#1021#1027#0#HTML" expanded="true" />
-            <element signature="e#1047#1068#0#HTML" expanded="true" />
-            <element signature="e#1198#1204#0#HTML" expanded="true" />
-            <element signature="e#1204#1210#0#HTML" expanded="true" />
-            <element signature="e#1210#1216#0#HTML" expanded="true" />
-            <element signature="e#1216#1222#0#HTML" expanded="true" />
-            <element signature="e#1242#1263#0#HTML" expanded="true" />
-            <element signature="e#1318#1324#0#HTML" expanded="true" />
-            <element signature="e#1324#1330#0#HTML" expanded="true" />
-            <element signature="e#1330#1336#0#HTML" expanded="true" />
-            <element signature="e#1336#1342#0#HTML" expanded="true" />
-            <element signature="e#1362#1383#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/bankC.html">
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
+        <state relative-caret-position="667">
+          <caret line="60" selection-start-line="60" selection-end-line="63" selection-end-column="14" />
           <folding>
-            <element signature="e#790#796#0#HTML" expanded="true" />
-            <element signature="e#796#802#0#HTML" expanded="true" />
-            <element signature="e#802#808#0#HTML" expanded="true" />
-            <element signature="e#808#814#0#HTML" expanded="true" />
-            <element signature="e#834#855#0#HTML" expanded="true" />
-            <element signature="e#988#994#0#HTML" expanded="true" />
-            <element signature="e#994#1000#0#HTML" expanded="true" />
-            <element signature="e#1000#1006#0#HTML" expanded="true" />
-            <element signature="e#1006#1012#0#HTML" expanded="true" />
-            <element signature="e#1032#1053#0#HTML" expanded="true" />
-            <element signature="e#1198#1204#0#HTML" expanded="true" />
-            <element signature="e#1204#1210#0#HTML" expanded="true" />
-            <element signature="e#1210#1216#0#HTML" expanded="true" />
-            <element signature="e#1216#1222#0#HTML" expanded="true" />
-            <element signature="e#1242#1263#0#HTML" expanded="true" />
-            <element signature="e#1395#1401#0#HTML" expanded="true" />
-            <element signature="e#1401#1407#0#HTML" expanded="true" />
-            <element signature="e#1407#1413#0#HTML" expanded="true" />
-            <element signature="e#1413#1419#0#HTML" expanded="true" />
-            <element signature="e#1439#1460#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/bankD.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="47" column="59" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
-          <folding>
-            <element signature="e#272#291#0#HTML" expanded="true" />
-            <element signature="e#790#796#0#HTML" expanded="true" />
-            <element signature="e#796#802#0#HTML" expanded="true" />
-            <element signature="e#802#808#0#HTML" expanded="true" />
-            <element signature="e#808#814#0#HTML" expanded="true" />
-            <element signature="e#834#855#0#HTML" expanded="true" />
-            <element signature="e#988#994#0#HTML" expanded="true" />
-            <element signature="e#994#1000#0#HTML" expanded="true" />
-            <element signature="e#1000#1006#0#HTML" expanded="true" />
-            <element signature="e#1006#1012#0#HTML" expanded="true" />
-            <element signature="e#1032#1053#0#HTML" expanded="true" />
-            <element signature="e#1183#1189#0#HTML" expanded="true" />
-            <element signature="e#1189#1195#0#HTML" expanded="true" />
-            <element signature="e#1195#1201#0#HTML" expanded="true" />
-            <element signature="e#1201#1207#0#HTML" expanded="true" />
-            <element signature="e#1227#1248#0#HTML" expanded="true" />
-            <element signature="e#1395#1401#0#HTML" expanded="true" />
-            <element signature="e#1401#1407#0#HTML" expanded="true" />
-            <element signature="e#1407#1413#0#HTML" expanded="true" />
-            <element signature="e#1413#1419#0#HTML" expanded="true" />
-            <element signature="e#1439#1460#0#HTML" expanded="true" />
-            <element signature="e#1126#1154#0#HTML" expanded="true" />
-            <element signature="e#1705#1734#0#HTML" expanded="true" />
+            <element signature="e#1357#1363#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/bankA.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+        <state>
+          <caret selection-end-column="25" />
           <folding>
-            <element signature="e#805#811#0#HTML" expanded="true" />
-            <element signature="e#811#817#0#HTML" expanded="true" />
-            <element signature="e#817#823#0#HTML" expanded="true" />
-            <element signature="e#823#829#0#HTML" expanded="true" />
-            <element signature="e#833#867#0#HTML" expanded="true" />
-            <element signature="e#1002#1008#0#HTML" expanded="true" />
-            <element signature="e#1008#1014#0#HTML" expanded="true" />
-            <element signature="e#1014#1020#0#HTML" expanded="true" />
-            <element signature="e#1020#1026#0#HTML" expanded="true" />
-            <element signature="e#1046#1067#0#HTML" expanded="true" />
-            <element signature="e#1196#1202#0#HTML" expanded="true" />
-            <element signature="e#1202#1208#0#HTML" expanded="true" />
-            <element signature="e#1208#1214#0#HTML" expanded="true" />
-            <element signature="e#1214#1220#0#HTML" expanded="true" />
-            <element signature="e#1240#1261#0#HTML" expanded="true" />
-            <element signature="e#1392#1398#0#HTML" expanded="true" />
-            <element signature="e#1398#1404#0#HTML" expanded="true" />
-            <element signature="e#1404#1410#0#HTML" expanded="true" />
-            <element signature="e#1410#1416#0#HTML" expanded="true" />
-            <element signature="e#1436#1457#0#HTML" expanded="true" />
-            <element signature="e#1126#1154#0#HTML" expanded="true" />
+            <element signature="e#2013#2042#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" lean-forward="true" selection-start-column="24" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="83" column="71" lean-forward="true" selection-start-line="83" selection-start-column="71" selection-end-line="83" selection-end-column="71" />
+        <state relative-caret-position="483">
+          <caret line="83" column="71" selection-start-line="83" selection-start-column="71" selection-end-line="83" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="291" column="29" selection-start-line="291" selection-start-column="29" selection-end-line="291" selection-end-column="29" />
           <folding>
-            <element signature="e#3517#3523#0#HTML" expanded="true" />
+            <element signature="e#18#27#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/reality.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
         </state>
       </provider>
     </entry>
